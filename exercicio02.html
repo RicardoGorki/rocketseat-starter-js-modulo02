@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="criarQuadrado()">Adicionar Quadrado</button>
+
+    <div id="box"></div>
+
+    <script>
+      function criarQuadrado() {
+        var quadrado = document.createElement("div");
+        quadrado.setAttribute("id", "boxes");
+        document.getElementById("box").appendChild(quadrado);
+        quadrado.style.marginTop = 5;
+        quadrado.style.width = 100;
+        quadrado.style.height = 100;
+        quadrado.style.backgroundColor = getRandomColor();
+
+        quadrado.onmouseover = function() {
+          quadrado.style.backgroundColor = getRandomColor();
+        };
+      }
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+  </body>
+</html>

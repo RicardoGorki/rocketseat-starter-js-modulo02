@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="lista"></ul>
+    <script>
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+
+      function ulNome() {
+        var j = nomes.length;
+
+        for (i = 0; i < j; i++) {
+          var item = document.createElement("li");
+          item.appendChild(document.createTextNode(nomes[i]));
+          lista.appendChild(item);
+        }
+      }
+
+      ulNome();
+    </script>
+  </body>
+</html>
